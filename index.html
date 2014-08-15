@@ -102,8 +102,8 @@
 
 <body>
     <div>
-        <span>12</span><span>:</span><span>00</span>
-        <small>AM</small>
+        <span id="hour">12</span><span>:</span><span id="minute">00</span>
+        <small id="meridiem">AM</small>
     </div>
       <svg viewbox="0 0 160 160" id="time" class="am">
         <g transform="translate(80,80)" id="timepicker" class="hours">
@@ -171,8 +171,12 @@ var timepicker = document.getElementById('timepicker');
 var time = document.getElementById('time');
 var am = document.getElementById('am');
 var pm = document.getElementById('pm');
+var meridiem = document.getElementById('meridiem');
+var hour = document.getElementById('hour');
+var minute = document.getElementById('minute');
 g1.onclick = function(e){
     if(e.target.attributes.rot){
+        hour.innerHTML = e.target.innerHTML;
         hand1.setAttribute('transform','rotate(' + e.target.attributes.rot.value + ')');
         g1.setAttribute('class','done');
         window.setTimeout( function(){ timepicker.setAttribute('class','minutes'); }, 444);
@@ -180,13 +184,17 @@ g1.onclick = function(e){
 };
 g2.onclick = function(e){
     if(e.target.attributes.rot){
+        minute.innerHTML = e.target.innerHTML;
         hand2.setAttribute('transform','rotate(' + e.target.attributes.rot.value + ')');
     }
 };
 am.onclick = function(e){
-    time.setAttribute('class','am');};
+    time.setAttribute('class','am');
+    meridiem.innerHTML = e.target.innerHTML;
+};
 pm.onclick = function(e){
     time.setAttribute('class','pm');
+    meridiem.innerHTML = e.target.innerHTML;
 };
 
 </script>
