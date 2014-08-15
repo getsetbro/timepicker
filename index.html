@@ -10,61 +10,173 @@
 
     <title>Timepicker</title>
     <style type="text/css">
+    head,body{
+        display: inline-block;
+        width:33vw;
+        vertical-align: top;
+        font-family: 'Helvetica', "Arial", sans-serif;
+    }
     body{
-        margin: 0
+        margin: 0;
+        font-size:12px;
+    }
+    div{
+        text-align: center;
+        background-color: #eee;
+        font-size: 1rem;
+        height: 55px;
+    }
+    div span{
+        font-size: 3rem
+    }
+    small{
+        font-size: 1rem        
     }
     svg{
-        height: 80vh;
+        height: calc(80vh - 6em);
+        max-width:33vw;
+        display: block;
+        margin: auto;
     }
-    circle, line {
-        stroke: #91C4EA;
-        fill: none;
-    }
-
     text {
-        fill: #333333;
-        font-family: 'Helvetica';
-        font-size: 18px;
+        font-family: 'Helvetica', "Arial", sans-serif;
         dominant-baseline: central;
+        cursor:pointer;
+    }
+    line {
+        stroke-linecap:round;
+    }
+    #hours, #minutes{
+        transition:display .5s;
+        transition:opacity .5s;
+        opacity: 0;
+        display:none;
+    }
+    .hours #hours, .minutes #minutes{
+        display: inline;
+        opacity: 100;
+    }
+    .hours #hours, .minutes #minutes{
+        display: inline;
+        opacity: 100;
+    }
+    style{
+        margin:5px;
+        padding: 5px;
+        background-color: #eee;
+        outline-color: #91C4EA;
+        outline-width: 3px;
+
     }
     </style>
+    <style contenteditable style="display:block">
+    text {
+        font-size: 1em;
+    }
+    </style>
+    <style contenteditable style="display:block">
+    text {
+        fill: #333333;
+    }
+    </style>
+    <style contenteditable style="display:block">
+    line {
+        stroke: #91C4EA;
+    }
+    </style>
+    <style contenteditable style="display:block">
+    circle {
+        fill: #eee;
+    }
+    </style>
+    <style contenteditable style="display:block">
+    .hand circle {
+        fill:#91C4EA;
+    }
+    </style>
+
 </head>
 
 <body>
-
-      <svg viewbox="0 0 160 160">
+    <div>
+        <span>12</span><span>:</span><span>00</span>
+        <small>AM</small>
+    </div>
+      <svg viewbox="0 0 160 160" id="timepicker" class="hours">
         <g transform="translate(80,80)">
-          <g id="hand" transform="rotate(180)">
-              <line x1="0" y1="0" x2="0" y2="55"></line>    
-              <circle cx="0" cy="65" r="10"></circle>
-          </g>
-
-            <circle cx="0" cy="0" r="2"></circle>
-            <circle cx="0" cy="0" r="79"></circle>
-            <text text-anchor="middle" x="0" y="-65">12</text>
-            <text text-anchor="middle" x="32" y="-56">1</text>
-            <text text-anchor="middle" x="56" y="-32">2</text>
-            <text text-anchor="middle" x="65" y="0" style="dominant-baseline: central;">3</text>
-            <text text-anchor="middle" x="56" y="32">4</text>
-            <text text-anchor="middle" x="32" y="56">5</text>
-            <text text-anchor="middle" x="0" y="65">6</text>
-            <text text-anchor="middle" x="-32" y="56">7</text>
-            <text text-anchor="middle" x="-56" y="32">8</text>
-            <text text-anchor="middle" x="-65" y="0">9</text>
-            <text text-anchor="middle" x="-56" y="-32">10</text>
-            <text text-anchor="middle" x="-32" y="-56">11</text>
+            <g id="minutes">
+                <circle cx="0" cy="0" r="79"/>
+                <g id="hand2" class="hand" transform="rotate(180)">
+                    <line x1="0" y1="0" x2="0" y2="55"/>    
+                    <circle cx="0" cy="65" r="12"/>
+                    <circle cx="0" cy="0" r="2"/>
+                </g>
+                <text text-anchor="middle" rot="-150" x="32" y="-56">05</text>
+                <text text-anchor="middle" rot="-120" x="56" y="-32">10</text>
+                <text text-anchor="middle" rot="-90" x="65" y="0">15</text>
+                <text text-anchor="middle" rot="-60" x="56" y="32">20</text>
+                <text text-anchor="middle" rot="-30" x="32" y="56">25</text>
+                <text text-anchor="middle" rot="0" x="0" y="65">30</text>
+                <text text-anchor="middle" rot="30" x="-32" y="56">35</text>
+                <text text-anchor="middle" rot="60" x="-56" y="32">40</text>
+                <text text-anchor="middle" rot="90" x="-65" y="0">45</text>
+                <text text-anchor="middle" rot="120" x="-56" y="-32">50</text>
+                <text text-anchor="middle" rot="150" x="-32" y="-56">55</text>
+                <text text-anchor="middle" rot="-180" x="0" y="-65">00</text>
+            </g>
+            <g id="hours">
+                <circle cx="0" cy="0" r="79"/>
+                <g id="hand1" class="hand" transform="rotate(180)">
+                    <line x1="0" y1="0" x2="0" y2="55"/>    
+                    <circle cx="0" cy="65" r="12"/>
+                    <circle cx="0" cy="0" r="2"/>
+                </g>
+                <text text-anchor="middle" rot="-150" x="32" y="-56">1</text>
+                <text text-anchor="middle" rot="-120" x="56" y="-32">2</text>
+                <text text-anchor="middle" rot="-90" x="65" y="0">3</text>
+                <text text-anchor="middle" rot="-60" x="56" y="32">4</text>
+                <text text-anchor="middle" rot="-30" x="32" y="56">5</text>
+                <text text-anchor="middle" rot="0" x="0" y="65">6</text>
+                <text text-anchor="middle" rot="30" x="-32" y="56">7</text>
+                <text text-anchor="middle" rot="60" x="-56" y="32">8</text>
+                <text text-anchor="middle" rot="90" x="-65" y="0">9</text>
+                <text text-anchor="middle" rot="120" x="-56" y="-32">10</text>
+                <text text-anchor="middle" rot="150" x="-32" y="-56">11</text>
+                <text text-anchor="middle" rot="-180" x="0" y="-65">12</text>
+            </g>
+        </g>
+        <g transform="translate(15,145)">
+            <circle r="12"/>
+            <text text-anchor="middle">AM</text>
+        </g>
+        <g transform="translate(145,145)">
+            <circle r="12"/>
+            <text text-anchor="middle">PM</text>
         </g>
     </svg>
-<input type="range" min="0" max="720" value="180" step="30" id="range" autofocus/>
+    <div>
+        <br>
+        Done
+    </div>
 
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-var hand = $('#hand');
-$('#range').on('change',function(e){
-            console.log(e);
-    hand.attr('transform','rotate('+e.target.value+')');
-});
-
+var g1 = document.getElementById('hours');
+var g2 = document.getElementById('minutes');
+var hand1 = document.getElementById('hand1');
+var hand2 = document.getElementById('hand2');
+var time = document.getElementById('timepicker');
+g1.onclick = function(e){
+    if(e.target.attributes.rot){
+        hand1.setAttribute('transform','rotate(' + e.target.attributes.rot.value + ')');
+        g1.setAttribute('class','done');
+        window.setTimeout( function(){ time.setAttribute('class','minutes'); }, 444);
+    }
+};
+g2.onclick = function(e){
+    if(e.target.attributes.rot){
+        hand2.setAttribute('transform','rotate(' + e.target.attributes.rot.value + ')');
+    }
+};
 
 </script>
 

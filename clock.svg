@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="160px" height="160px" viewBox="0 0 160 160" enable-background="new 0 0 160 160" xml:space="preserve">
+<g transform="translate(80,80)">
+	<circle id="circ" cx="0" cy="0" r="79"/>
+	<g id="hand" transform="rotate(180)">
+		<line fill="none" x1="0" y1="0" x2="0" y2="55"/>
+		<circle cx="0" cy="65" r="12"/>
+		<circle cx="0" cy="0" r="2"/>
+	</g>
+	<text transform="matrix(1 0 0 1 -6.6738 -65)" font-family="'ArialMT'" font-size="12">12</text>
+	<text transform="matrix(1 0 0 1 28.6631 -56)" font-family="'ArialMT'" font-size="12">1</text>
+	<text transform="matrix(1 0 0 1 52.6631 -32)" font-family="'ArialMT'" font-size="12">2</text>
+	<text transform="matrix(1 0 0 1 61.6631 0)" font-family="'ArialMT'" font-size="12">3</text>
+	<text transform="matrix(1 0 0 1 52.6631 32)" font-family="'ArialMT'" font-size="12">4</text>
+	<text transform="matrix(1 0 0 1 28.6631 56)" font-family="'ArialMT'" font-size="12">5</text>
+	<text transform="matrix(1 0 0 1 -3.3369 65)" font-family="'ArialMT'" font-size="12">6</text>
+	<text transform="matrix(1 0 0 1 -35.3369 56)" font-family="'ArialMT'" font-size="12">7</text>
+	<text transform="matrix(1 0 0 1 -59.3369 32)" font-family="'ArialMT'" font-size="12">8</text>
+	<text transform="matrix(1 0 0 1 -68.3369 0)" font-family="'ArialMT'" font-size="12">9</text>
+	<text transform="matrix(1 0 0 1 -62.6738 -32)" font-family="'ArialMT'" font-size="12">10</text>
+	<text transform="matrix(1 0 0 1 -38.2285 -56)" font-family="'ArialMT'" font-size="12">11</text>
+</g>
+<g>
+	<circle fill="#FFFFFF" cx="13.3" cy="152.3" r="7.3"/>
+	<circle fill="#FFFFFF" cx="150.3" cy="153.7" r="8.7"/>
+</g>
+</svg>
