@@ -43,7 +43,7 @@
         dominant-baseline: central;
         cursor:pointer;
     }
-    #hour, #minute{
+    div span, div small{
         cursor:pointer;
     }
     line {
@@ -63,7 +63,7 @@
         display: inline;
         opacity: 100;
     }
-    .am #am circle, .pm #pm circle{
+    .AM #am circle, .PM #pm circle{
         fill:#91C4EA;
     }
     style{
@@ -199,10 +199,15 @@ pm.onclick = function(e){
     meridiem.innerHTML = e.target.innerHTML;
 };
 hour.onclick = function(e){
-        window.setTimeout( function(){ timepicker.setAttribute('class','hours'); }, 444);
+    window.setTimeout( function(){ timepicker.setAttribute('class','hours'); }, 444);
 };
 minute.onclick = function(e){
-        window.setTimeout( function(){ timepicker.setAttribute('class','minutes'); }, 444);
+    window.setTimeout( function(){ timepicker.setAttribute('class','minutes'); }, 444);
+};
+meridiem.onclick = function(e){
+    var ampm = (e.target.innerHTML === "AM") ? "PM" : "AM";
+    meridiem.innerHTML = ampm;
+    time.setAttribute('class',ampm);
 
 };
 
