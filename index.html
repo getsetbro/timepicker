@@ -178,7 +178,6 @@ g1.onclick = function(e){
     if(e.target.attributes.rot){
         hour.innerHTML = e.target.innerHTML;
         hand1.setAttribute('transform','rotate(' + e.target.attributes.rot.value + ')');
-        g1.setAttribute('class','done');
         window.setTimeout( function(){ timepicker.setAttribute('class','minutes'); }, 444);
     }
 };
@@ -195,6 +194,13 @@ am.onclick = function(e){
 pm.onclick = function(e){
     time.setAttribute('class','pm');
     meridiem.innerHTML = e.target.innerHTML;
+};
+hour.onclick = function(e){
+        window.setTimeout( function(){ timepicker.setAttribute('class','hours'); }, 444);
+};
+minute.onclick = function(e){
+        window.setTimeout( function(){ timepicker.setAttribute('class','minutes'); }, 444);
+
 };
 
 </script>
