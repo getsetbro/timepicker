@@ -60,6 +60,9 @@
         display: inline;
         opacity: 100;
     }
+    .am #am circle, .pm #pm circle{
+        fill:#91C4EA;
+    }
     style{
         margin:5px;
         padding: 5px;
@@ -102,8 +105,8 @@
         <span>12</span><span>:</span><span>00</span>
         <small>AM</small>
     </div>
-      <svg viewbox="0 0 160 160" id="timepicker" class="hours">
-        <g transform="translate(80,80)">
+      <svg viewbox="0 0 160 160" id="time" class="am">
+        <g transform="translate(80,80)" id="timepicker" class="hours">
             <g id="minutes">
                 <circle cx="0" cy="0" r="79"/>
                 <g id="hand2" class="hand" transform="rotate(180)">
@@ -145,11 +148,11 @@
                 <text text-anchor="middle" rot="-180" x="0" y="-65">12</text>
             </g>
         </g>
-        <g transform="translate(15,145)">
+        <g transform="translate(15,145)" id="am">
             <circle r="12"/>
             <text text-anchor="middle">AM</text>
         </g>
-        <g transform="translate(145,145)">
+        <g transform="translate(145,145)" id="pm">
             <circle r="12"/>
             <text text-anchor="middle">PM</text>
         </g>
@@ -164,18 +167,26 @@ var g1 = document.getElementById('hours');
 var g2 = document.getElementById('minutes');
 var hand1 = document.getElementById('hand1');
 var hand2 = document.getElementById('hand2');
-var time = document.getElementById('timepicker');
+var timepicker = document.getElementById('timepicker');
+var time = document.getElementById('time');
+var am = document.getElementById('am');
+var pm = document.getElementById('pm');
 g1.onclick = function(e){
     if(e.target.attributes.rot){
         hand1.setAttribute('transform','rotate(' + e.target.attributes.rot.value + ')');
         g1.setAttribute('class','done');
-        window.setTimeout( function(){ time.setAttribute('class','minutes'); }, 444);
+        window.setTimeout( function(){ timepicker.setAttribute('class','minutes'); }, 444);
     }
 };
 g2.onclick = function(e){
     if(e.target.attributes.rot){
         hand2.setAttribute('transform','rotate(' + e.target.attributes.rot.value + ')');
     }
+};
+am.onclick = function(e){
+    time.setAttribute('class','am');};
+pm.onclick = function(e){
+    time.setAttribute('class','pm');
 };
 
 </script>
