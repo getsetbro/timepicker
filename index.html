@@ -65,6 +65,9 @@
     .AM #am circle, .PM #pm circle{
         fill:#91C4EA;
     }
+    .done{
+        display: none
+    }
     style{
         margin:5px;
         padding: 5px;
@@ -107,7 +110,7 @@
         <span id="hour">12</span><span>:</span><span id="minute">00</span>
         <small id="meridiem">AM</small>
     </div>
-      <svg viewbox="0 0 160 160" id="time" class="am">
+      <svg viewbox="0 0 160 160" id="time" class="AM">
         <g transform="translate(80,80)" id="timepicker" class="hours">
             <g id="minutes">
                 <circle cx="0" cy="0" r="79"/>
@@ -159,7 +162,7 @@
             <text text-anchor="middle">PM</text>
         </g>
     </svg>
-    <div>
+    <div id="done">
         <br>
         Done
     </div>
@@ -176,6 +179,7 @@ var pm = document.getElementById('pm');
 var meridiem = document.getElementById('meridiem');
 var hour = document.getElementById('hour');
 var minute = document.getElementById('minute');
+var done = document.getElementById('done');
 g1.onclick = function(e){
     if(e.target.attributes.rot){
         hour.innerHTML = e.target.innerHTML;
@@ -207,7 +211,10 @@ meridiem.onclick = function(e){
     var ampm = (e.target.innerHTML === "AM") ? "PM" : "AM";
     meridiem.innerHTML = ampm;
     time.setAttribute('class',ampm);
-
+};
+done.onclick = function(e){
+    time.setAttribute('class','done');
+    done.setAttribute('class','done');
 };
 
 </script>
