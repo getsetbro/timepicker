@@ -18,19 +18,17 @@
     }
     body{
         margin: 0;
-        font-size:12px;
     }
-    div{
+    #digital, #done{
         text-align: center;
         background-color: #eee;
-        font-size: 1rem;
-        height: 55px;
+        font-size: 1em;
     }
     div span{
-        font-size: 3rem
+        font-size: 4em
     }
-    small{
-        font-size: 1rem        
+    small, #done{
+        font-size: 2em        
     }
     svg{
         height: calc(80vh - 6em);
@@ -62,13 +60,11 @@
         display: inline;
         opacity: 100;
     }
-    .AM #am circle, .PM #pm circle{
-        fill:#91C4EA;
-    }
     .done{
         display: none
     }
-    style{
+    [contenteditable]{
+        display: block;
         margin:5px;
         padding: 5px;
         background-color: #eee;
@@ -77,41 +73,58 @@
 
     }
     </style>
-    <style contenteditable style="display:block">
+    <style contenteditable>
+    body{
+        color:#333;
+    }
+    </style>
+    <style contenteditable>
+    body{
+        font-size:11px;
+    }
+    </style>
+    <style contenteditable>
     text {
         font-size: 1em;
     }
     </style>
-    <style contenteditable style="display:block">
+    <style contenteditable>
     text {
-        fill: #333333;
+        fill: #333;
     }
     </style>
-    <style contenteditable style="display:block">
+    <style contenteditable>
     line {
         stroke: #91C4EA;
     }
     </style>
-    <style contenteditable style="display:block">
+    <style contenteditable>
     circle {
         fill: #eee;
     }
     </style>
-    <style contenteditable style="display:block">
-    .hand circle {
+    <style contenteditable>
+    .hand circle, .AM #am circle, .PM #pm circle {
         fill:#91C4EA;
     }
     </style>
+    <style contenteditable>
+    .hours #hour, .minutes #minute{
+        color:#5CA6DD;
+    }
+    </style>
+
 
 </head>
 
 <body>
-    <div>
+<div id="timepicker" class="hours">
+    <div id="digital">
         <span id="hour">12</span><span>:</span><span id="minute">00</span>
         <small id="meridiem">AM</small>
     </div>
       <svg viewbox="0 0 160 160" id="time" class="AM">
-        <g transform="translate(80,80)" id="timepicker" class="hours">
+        <g transform="translate(80,80)">
             <g id="minutes">
                 <circle cx="0" cy="0" r="79"/>
                 <g id="hand2" class="hand" transform="rotate(180)">
@@ -163,10 +176,9 @@
         </g>
     </svg>
     <div id="done">
-        <br>
         Done
     </div>
-
+</div>
 <script>
 var g1 = document.getElementById('hours');
 var g2 = document.getElementById('minutes');
